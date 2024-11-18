@@ -91,18 +91,6 @@ const AddHorse = () => {
               imageUpload={handleImg}
               image={imageUpload.image}
             />
-          </StyleddivP>
-          <div
-            style={
-              {
-                // marginLeft: "10px",
-                // marginBottom: "50px",
-                // marginTop: "-135px",
-                // borderRadius: "25px",
-                // fontFamily: "arial",
-              }
-            }
-          >
             <StyledButton
               type="submit"
               color="primary"
@@ -110,7 +98,8 @@ const AddHorse = () => {
             >
               submit
             </StyledButton>
-          </div>
+          </StyleddivP>
+
           <StyledForm onSubmit={handleNewHorse}>
             <Styleddiv1>
               <StyledLabel htmlFor="nickName">Nick Name:</StyledLabel>
