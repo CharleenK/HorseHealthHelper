@@ -1,0 +1,51 @@
+{
+  "name": "client",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Charleen k.",
+  "license": "MIT",
+  "private": true,
+  "proxy": "http://localhost:8784",
+  "dependencies": {
+    "@babel/core": "^7.0.0-0",
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "@babel/plugin-syntax-flow": "^7.14.5",
+    "@babel/plugin-transform-react-jsx": "^7.14.9",
+    "@cloudinary/react": "^1.13.0",
+    "@cloudinary/url-gen": "^1.21.0",
+    "@fortawesome/fontawesome-free": "^6.6.0",
+    "@ljharb/tsconfig": "^0.2.0",
+    "@material-ui/core": "^4.12.4",
+    "@material-ui/system": "^4.12.2",
+    "@mui/material": "^6.1.4",
+    "@mui/styled-engine-sc": "^6.1.4",
+    "js-sha1": "^0.7.0",
+    "mdb-react-ui-kit": "^9.0.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-is": ">= 16.8.0",
+    "react-normalize": "^0.4.4",
+    "react-router-dom": "^6.26.1",
+    "react-scripts": "^5.0.1",
+    "styled-components": "^6.1.13",
+    "typescript": ">= 2.7"
+  },
+  "resolutions": {
+    "styled-components": "^5"
+  },
+  "scripts": {
+    "start": "react-scripts start"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

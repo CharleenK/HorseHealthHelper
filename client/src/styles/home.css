@@ -1,0 +1,16 @@
+/* body {
+  background-color: #3b3214, #906f39, #b49162, #d1d976, #5a6404;
+} */
+.page-background {
+  display: flex;
+  background-image: url("../images/home.jpg");
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  box-sizing: border-box;
+  font-size: 30px;
+  height: 104vh;
+  width: 100vw;
+}
