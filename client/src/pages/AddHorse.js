@@ -40,6 +40,7 @@ const AddHorse = () => {
         breed: breed,
         color: color,
         height: height,
+        image: uploadedImage,
       }),
     };
 
@@ -91,19 +92,18 @@ const AddHorse = () => {
               imageUpload={handleImg}
               image={imageUpload.image}
             />
-            <StyledButton
+            <StyledButtonA
               type="submit"
               color="primary"
               onClick={(e) => handleSubmit(e)}
             >
               submit
-            </StyledButton>
+            </StyledButtonA>
           </StyleddivP>
-
           <StyledForm onSubmit={handleNewHorse}>
             <Styleddiv1>
-              <StyledLabel htmlFor="nickName">Nick Name:</StyledLabel>
-              <StyledInput
+              <StyledLabelA htmlFor="nickName">Nick Name:</StyledLabelA>
+              <StyledInputA
                 type="text"
                 id="NickName"
                 name="NickName"
@@ -111,11 +111,11 @@ const AddHorse = () => {
                 value={nickName}
                 onChange={(e) => setNickName(e.target.value)}
                 required
-              ></StyledInput>
-              <StyledLabel htmlFor="registeredName">
+              ></StyledInputA>
+              <StyledLabelA htmlFor="registeredName">
                 Registered Name:
-              </StyledLabel>
-              <StyledInput
+              </StyledLabelA>
+              <StyledInputA
                 type="text"
                 id="RegisteredName"
                 name="RegisteredName"
@@ -123,9 +123,9 @@ const AddHorse = () => {
                 value={registeredName}
                 onChange={(e) => setRegisteredName(e.target.value)}
                 required
-              ></StyledInput>
-              <StyledLabel htmlFor="dateOfBirth">Date of Birth:</StyledLabel>
-              <StyledInput
+              ></StyledInputA>
+              <StyledLabelA htmlFor="dateOfBirth">Date of Birth:</StyledLabelA>
+              <StyledInputA
                 type="date"
                 id="DateOfBirth"
                 name="DateOfBirth"
@@ -133,9 +133,9 @@ const AddHorse = () => {
                 value={dateOfBirth}
                 onChange={(e) => setDateOfBirth(e.target.value)}
                 required
-              ></StyledInput>
-              <StyledLabel htmlFor="sex">Sex:</StyledLabel>
-              <StyledInput
+              ></StyledInputA>
+              <StyledLabelA htmlFor="sex">Sex:</StyledLabelA>
+              <StyledInputA
                 type="text"
                 id="Sex"
                 name="Sex"
@@ -143,11 +143,11 @@ const AddHorse = () => {
                 value={sex}
                 onChange={(e) => setSex(e.target.value)}
                 required
-              ></StyledInput>
+              ></StyledInputA>
             </Styleddiv1>
             <Styleddiv2>
-              <StyledLabel htmlFor="breed">Breed:</StyledLabel>
-              <StyledInput
+              <StyledLabelB htmlFor="breed">Breed:</StyledLabelB>
+              <StyledInputB
                 type="text"
                 id="Breed"
                 name="Breed"
@@ -155,9 +155,9 @@ const AddHorse = () => {
                 value={breed}
                 onChange={(e) => setBreed(e.target.value)}
                 required
-              ></StyledInput>
-              <StyledLabel htmlFor="color">color:</StyledLabel>
-              <StyledInput
+              ></StyledInputB>
+              <StyledLabelB htmlFor="color">color:</StyledLabelB>
+              <StyledInputB
                 type="text"
                 id="Color"
                 name="Color"
@@ -165,9 +165,9 @@ const AddHorse = () => {
                 value={color}
                 onChange={(e) => setColor(e.target.value)}
                 required
-              ></StyledInput>
-              <StyledLabel htmlFor="height">Height:</StyledLabel>
-              <StyledInput
+              ></StyledInputB>
+              <StyledLabelB htmlFor="height">Height:</StyledLabelB>
+              <StyledInputB
                 type="text"
                 id="height"
                 name="height"
@@ -175,8 +175,8 @@ const AddHorse = () => {
                 value={height}
                 onChange={(e) => setHeight(e.target.value)}
                 required
-              ></StyledInput>
-              <StyledButton
+              ></StyledInputB>
+              <StyledButtonB
                 disabled={
                   nickName === "" ||
                   registeredName === "" ||
@@ -188,46 +188,53 @@ const AddHorse = () => {
                 }
               >
                 Add My Horse
-              </StyledButton>
+              </StyledButtonB>
             </Styleddiv2>
           </StyledForm>
         </div>
+        <figcaption class="img-caption">
+          Photo from
+          <a href="https://unsplash.com/photos/three-brown-and-black-horses-running-in-open-green-field-at-daytime-gGG7NHbzeGg?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">
+            Florin Beudean
+          </a>
+        </figcaption>
       </StyledMain>
     </>
   );
 };
 
 const StyledMain = styled.div`
-  display: block;
-  position: relative;
-  box-sizing: border-box;
-  color: #3b3214;
+  margin-top: -14.5vh;
 `;
 
 const StyledForm = styled.form`
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
-  height: 90%;
-  width: 95%;
-  margin-right: 15vh;
-  padding: 3vh;
+  height: 80%;
+  width: 98%;
+  z-index: 1;
+  // border: 2px solid red;
 `;
 const StyleddivP = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
   color: white;
-  background-color: #5a6404;
-  border: 3px solid #3b3214;
+  background-color: #ffffff20;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  margin-top: -40vh;
+  padding: 10px 0px;
+  width: 22%;
   border-radius: 10px;
   cursor: pointer;
-  margin-top: 30px;
-  margin-bottom: 0px;
-  padding: 10px;
   text-decoration: none;
-  width: 100%;
+  z-index: 2;
   &:hover {
     color: white;
     text-decoration: underline;
-    font-size: 125%;
+    font-size: 105%;
     transition: 0.3s ease-in-out;
   }
   &.active {
@@ -235,17 +242,14 @@ const StyleddivP = styled.div`
     color: #5a6404;
   }
 `;
-
 const Styleddiv1 = styled.div`
-  margin-right: 25px;
-  margin-left: -10vw;
+  min-width: 37%;
 `;
 //need @media querry to change input size and location when using a smaller screen
 const Styleddiv2 = styled.div`
-  margin-right: -10vw;
-  min-width: 255px;
+  min-width: 37%;
 `;
-const StyledLabel = styled.label`
+const StyledLabelA = styled.label`
   display: block;
   text-shadow: 1px 1px 1px beige, 2px 2px 2px #5a6404;
   width: 100%;
@@ -254,30 +258,72 @@ const StyledLabel = styled.label`
   text-align: left;
   font-weight: bold;
 `;
-const StyledInput = styled.input`
+const StyledLabelB = styled.label`
   display: block;
+  text-shadow: 1px 1px 1px beige, 2px 2px 2px #5a6404;
   width: 100%;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  padding-left: 3.5vw;
+  text-align: left;
+  font-weight: bold;
+`;
+
+const StyledInputA = styled.input`
+  display: block;
+  min-width: 91%;
   margin-bottom: 15px;
-  padding: 10px;
+  padding: 10px 30px;
   box-sizing: border-box;
   border: 3px solid #3b3214;
   border-radius: 5px;
 `;
-const StyledButton = styled.button`
+const StyledInputB = styled.input`
+  display: block;
+  min-width: 91%;
+  margin-bottom: 15px;
+  padding: 10px 30px;
+  box-sizing: border-box;
+  border: 3px solid #3b3214;
+  border-radius: 5px;
+  float: right;
+`;
+const StyledButtonA = styled.button`
+  color: white;
+  background-color: #5a6404;
+  border: 3px solid #3b3214;
+  border-radius: 10px;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 10px;
+  text-decoration: none;
+  &:hover {
+    color: white;
+    text-decoration: underline;
+    font-size: 105%;
+    transition: 0.3s ease-in-out;
+  }
+  &.active {
+    text-decoration: underline;
+    color: #5a6404;
+  }
+`;
+const StyledButtonB = styled.button`
   color: white;
   background-color: #5a6404;
   border: 3px solid #3b3214;
   border-radius: 10px;
   cursor: pointer;
-  margin-top: 30px;
+  margin-top: 50px;
   margin-bottom: 0px;
+  float: right;
   padding: 10px;
   text-decoration: none;
-  width: 100%;
+  min-width: 91%;
   &:hover {
     color: white;
     text-decoration: underline;
-    font-size: 125%;
+    font-size: 105%;
     transition: 0.3s ease-in-out;
   }
   &.active {

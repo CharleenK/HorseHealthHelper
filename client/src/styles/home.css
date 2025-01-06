@@ -14,3 +14,9 @@
   height: 104vh;
   width: 100vw;
 }
+.img-caption {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  font-size: 0.85rem;
+}

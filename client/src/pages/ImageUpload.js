@@ -33,15 +33,15 @@ const HorseAvatarUpload = (props) => {
         src={image}
         style={{ width: "110px", borderRadius: "50%", height: "100px" }}
       />
-      <input
+      <StyledInput
         ref={inputFileRef}
         accept="image/*"
         id="avatar-image-upload"
         type="file"
         onChange={handleOnChange}
-      />
-      <label htmlFor="avatar-image-upload">
-        {/* <Button
+      ></StyledInput>
+      {/* <StyledLabel htmlFor="avatar-image-upload"> */}
+      {/* <Button
           color="primary"
           component="span"
           style={{
@@ -54,7 +54,7 @@ const HorseAvatarUpload = (props) => {
           {image ? <DeleteIcon mr={2} /> : <UploadIcon mr={2} />}
           {image ? "Uploaded" : "Upload"}
         </Button> */}
-      </label>
+      {/* </StyledLabel> */}
     </CenteredContent>
   );
 };
@@ -62,11 +62,17 @@ const HorseAvatarUpload = (props) => {
 const CenteredContent = styled.div`
   text-align: center;
 `;
-
 const BigAvatar = styled(Avatar)`
-  margin-left: 40%;
-  border: 1px solid grey;
-  margin-top: 10%;
+  margin-left: 36%;
+  border: 2px solid #3b3214;
   box-shadow: 1px 1px 15px -5px black;
 `;
+const StyledInput = styled.input`
+  font-size: 20px;
+  margin-left: 5vw;
+  border: 2px solid red;
+`;
+// const StyledLabel= styled.label`
+// border: 3px solid red;
+// `
 export default HorseAvatarUpload;

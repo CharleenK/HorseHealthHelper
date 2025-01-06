@@ -8,8 +8,16 @@ const HORSES_COLLECTION = "horses";
 //add new tables, obect info date etc
 const addHorse = async (req, res) => {
   const { userName } = req.body;
-  const { nickName, registeredName, dateOfBirth, sex, breed, color, height } =
-    req.body;
+  const {
+    nickName,
+    registeredName,
+    dateOfBirth,
+    sex,
+    breed,
+    color,
+    height,
+    image,
+  } = req.body;
   const client = new MongoClient(MONGO_URI);
   try {
     await client.connect();
@@ -36,6 +44,7 @@ const addHorse = async (req, res) => {
         breed,
         color,
         height,
+        image,
         dentalCare: [],
         // { date: "", exam: false, float: false, comment: "" }
         hoofCare: [],
@@ -68,9 +77,9 @@ const addHorse = async (req, res) => {
         data: newHorse,
         addHorseToUser,
       });
-  } else {
+    } else {
       return res.status(404).json({ status: 404, error: "Account Error" });
-      }
+    }
   } catch (err) {
     console.error("Error:", err);
   } finally {
