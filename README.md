@@ -1,4 +1,4 @@
-# Capstone Project -HorseHealth Helper
+# HorseHealth Helper
 
 ## Overview
 
